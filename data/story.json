@@ -1,0 +1,384 @@
+[
+    {
+        "title": "WAKING UP",
+        "description": [
+            "You wake up. Your head hurts and it takes a while for the eyes to adjust to the",
+            "light. You must have fallen asleep sitting at the desk but... you don't ",
+            "recognize the desk nor anything else around you.",
+            "It's a small room with only two pieces of furniture; the desk you are sitting at",
+            "and a bed. Behind you, the door.",
+            "On the desk you see a glass of water and a couple of pills near it; next to them",
+            "a piece of paper and a wrist watch."
+        ],
+        "tag": 0,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Get up",
+                "result": 4
+            },
+            {
+                "prompt": "Take the pills",
+                "result": 1
+            },
+            {
+                "prompt": "Examine piece of paper",
+                "result": 6
+            },
+            {
+                "prompt": "Look at the time",
+                "result": 7
+            },
+            {
+                "prompt": "Look under the desk",
+                "result": 2
+            }
+        ]
+    },
+    {
+        "title": "THE PILLS",
+        "description": [
+            "You don't think twice about it and swallow both the pills with one sip of water.",
+            "Immediately, you start feeling an ache in your heart.",
+            "The heartbeat is increasing, the pain is indescribable! you start gasping, ",
+            "reaching for air as if you were drowning but... it is inevitable. light fades",
+            "out and everything turns to black.",
+            "Night comes."
+        ],
+        "tag": 1,
+        "gameOver": true,
+        "actions": []
+    },
+    {
+        "title": "UNDER THE DESK",
+        "description": [
+            "You kneel and find, under the desk, a small piece of paper."
+        ],
+        "tag": 2,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Examine piece of paper",
+                "result": 3
+            },
+            {
+                "prompt": "Get up",
+                "result": 4
+            }
+        ]
+    },
+    {
+        "title": "THE NOTE",
+        "description": [
+            "You reach for the piece of paper under the desk. It is broken, teared apart.",
+            "On it you can read, in a hasty handwriting, part of a sentence:",
+            "  \"DON'T T\"."
+        ],
+        "tag": 3,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Get up",
+                "result": 4
+            }
+        ]
+    },
+    {
+        "title": "THE ROOM",
+        "description": [
+            "You are now at the center of the room; it is rather small and with one step you",
+            "can reach every corner of it."
+        ],
+        "tag": 4,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the bed",
+                "result": 12
+            },
+            {
+                "prompt": "Go to the door",
+                "result": 8
+            }
+        ]
+    },
+    {
+        "title": "THE DESK",
+        "description": [
+            "You take the chair and sit at the desk.",
+            "On it there are two pills next to a glass of water, a wrist watch and a note."
+        ],
+        "tag": 5,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take the pills",
+                "result": 1
+            },
+            {
+                "prompt": "Read the note",
+                "result": 6
+            },
+            {
+                "prompt": "Look at the time",
+                "result": 7
+            },
+            {
+                "prompt": "Look under the desk",
+                "result": 2
+            },
+            {
+                "prompt": "Get up",
+                "result": 4
+            }
+        ]
+    },
+    {
+        "title": "THE NOTE",
+        "description": [
+            "You take the note. It is a small piece of paper, noticeably broken, as if it",
+            "has been teared apart.",
+            "On it you can read, in a hasty handwriting, part of a sentence:",
+            "  \"AKE THE PILLS!\"",
+            "You place the note back on the desk, next to the watch and the pills."
+        ],
+        "tag": 6,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take the pills",
+                "result": 1
+            },
+            {
+                "prompt": "Look at the time",
+                "result": 7
+            },
+            {
+                "prompt": "Look under the desk",
+                "result": 2
+            },
+            {
+                "prompt": "Get up",
+                "result": 4
+            }
+        ]
+    },
+    {
+        "title": "THE WATCH",
+        "description": [
+            "The crystal on the watch is shattered and the hands don't seem to be moving.",
+            "They stopped at \"03:21\".",
+            "You place the watch back on the desk, next to the note and the pills."
+        ],
+        "tag": 7,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take the pills",
+                "result": 1
+            },
+            {
+                "prompt": "Read the note",
+                "result": 6
+            },
+            {
+                "prompt": "Look under the desk",
+                "result": 2
+            },
+            {
+                "prompt": "Get up",
+                "result": 4
+            }
+        ]
+    },
+    {
+        "title": "THE DOOR",
+        "description": [
+            "The door is shut. On the wall near the handle a keypad is installed; it most",
+            "likely controls the door lock with a digits PIN. A small LED light next to the",
+            "display flickers red."
+        ],
+        "tag": 8,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Enter PIN",
+                "result": 9,
+                "password": {
+                    "value": "0321",
+                    "fail": 11
+                }
+            },
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the bed",
+                "result": 12
+            }
+        ]
+    },
+    {
+        "title": "A BREATH OF FRESH AIR",
+        "description": [
+            "The LED light on the keypad turns green and the door unlocks with a loud CLICK.",
+            "You turn the handle and thrust forward to open the door and see what else is out",
+            "there.",
+            "A sudden burst of light hits your eyes, it is high morning and the Sun shines",
+            "upon... trees! A dense forest of pine trees stretches out and fills the view all",
+            "around.",
+            "As you move to make a step forward, you notice a folded piece of paper stuck",
+            "under your left foot."
+        ],
+        "tag": 9,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take piece of paper",
+                "result": 10
+            }
+        ]
+    },
+    {
+        "title": "A BREATH OF HOT HAIR",
+        "description": [
+            "You take the note, unfold it and read:",
+            "  \"To anyone who might find this, my name is Nick Dawnes. I hid in this bunker",
+            "   when the nuclear war first started trying to outlive it, thinking it would",
+            "   all be over soon. I was wrong. Food and water supplies started running low",
+            "   after a couple of weeks and have now completely ended.",
+            "   I don't want to wait for thirst or hunger to take over me, I really don't.",
+            "   As I am writing, I have already swallowed 18 of the 20 pills I had packed for",
+            "   such an occasion.",
+            "   Hoping the World will soon know peace once more,",
+            "   I now say goodbye.\"",
+            "'Of course! it all makes sense now!' you think while a distant explosion makes",
+            "the earth tremble and the sky rumble with rage.",
+            "Night comes as the Sun gets covered by an enormous cloud of black smoke.",
+            "Trees are flung away, rocks fly in every direction and cracks in the earth, like",
+            "black holes, swallow all they can.",
+            "You close your eyes as you feel an intense wave of heat burning your face.",
+            "Night comes."
+        ],
+        "tag": 10,
+        "gameOver": true,
+        "actions": []
+    },
+    {
+        "title": "THE DOOR",
+        "description": [
+            "A loud BEEP echoes in the room. The LED light on the keypad turns off and then",
+            "on again but it is still red. The door remains locked."
+        ],
+        "tag": 11,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Enter PIN",
+                "result": 9,
+                "password": {
+                    "value": "0321",
+                    "fail": 11
+                }
+            },
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the bed",
+                "result": 12
+            }
+        ]
+    },
+    {
+        "title": "THE BED",
+        "description": [
+            "The bed is untidy, the sheets stained and the pillow hard and uncomfortable;",
+            "still, it does not feel completely unpleasant and, given the headache and the",
+            "general tiredness of your limbs, a sleep seems necessary.",
+            "Beneath the bed you spot a carton box."
+        ],
+        "tag": 12,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take a nap",
+                "result": 13
+            },
+            {
+                "prompt": "Examine the box",
+                "result": 14
+            },
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the door",
+                "result": 8
+            }
+        ]
+    },
+    {
+        "title": "A QUICK REST",
+        "description": [
+            "You let yourself fall on the bed and close your eyes. The rapid movement",
+            "generates a sharp, cold pain in your head. The box pushes the mattress from",
+            "under the bed and adds another layer of discomfort to the experience.",
+            "Nevertheless, it only takes a couple of seconds for you to fall asleep.",
+            "When you wake up nothing has changed in the room and you feel not at all rested.",
+            "You get up - slowly, to avoid another headache."
+        ],
+        "tag": 13,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take another nap",
+                "result": 13
+            },
+            {
+                "prompt": "Examine the box",
+                "result": 14
+            },
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the door",
+                "result": 8
+            }
+        ]
+    },
+    {
+        "title": "THE BOX",
+        "description": [
+            "You reach for the box under the bed and immediately notice it is bigger and",
+            "heavier than it seemed. It contains food supplies, or at least it did. All that",
+            "is left now is empty bags and empty cans, and empty bottles of what must have",
+            "been water."
+        ],
+        "tag": 14,
+        "gameOver": false,
+        "actions": [
+            {
+                "prompt": "Take a nap",
+                "result": 13
+            },
+            {
+                "prompt": "Go to the desk",
+                "result": 5
+            },
+            {
+                "prompt": "Go to the door",
+                "result": 8
+            }
+        ]
+    }
+]
