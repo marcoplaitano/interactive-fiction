@@ -2,10 +2,6 @@
 
 A choice-based interactive fiction game implemented in Python.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-## Description
-
 In [this type] of game, the player is presented with a situation, a "scene", and
 the only way to progress is by choosing the next move from a list of possible
 actions related to that particular scene.  
@@ -17,35 +13,34 @@ Each action results in a different outcome, leading to a new situation.
 
 ## Usage
 
-Clone or [download] this project and *cd* into its root directory.
-
-Run the game with the following command:
+Clone this repository and run the main script:
 
 ```shell
-python main.py
+python3 main.py
 ```
 
 ### How to play
 
-Every scene is presented with a *title*, a *description* and a numbered list of
-all the possible *actions*; to choose from the list, simply type in the number
-corresponding to the action you want to perform.
+Every scene is presented with a **title**, a **description** and a numbered list of
+all the possible **actions**.  
+To choose from the list, simply type in the number corresponding to the action
+you want to perform.
 
-### Passwords
+#### Passwords
 
-When you choose an action, to actually perform it, you might be asked to input a
-string.  
+When you choose an action you might be asked to input a string to actually
+perform it.  
 Only if the string given in input matches a certain value the action will be
 considered successful.  
-An example of this might be choosing actions similar to "Answer the question" or
-"Type the password".
+An example of this might be choosing actions similar to "*Answer the question*"
+or "*Type the password*".
 
-### Menu
+#### Menu
 
-Type **0** at any time during the game to access the menu and perform actions
+Type `0` at any time during the game to access the menu and perform actions
 like saving/loading the progress or quitting the game.
 
-### Save & Load
+#### Save & Load
 
 You can save & load the progress to/from a text file via the game's menu.
 
@@ -53,53 +48,91 @@ You can save & load the progress to/from a text file via the game's menu.
 
 ## Write a new story
 
-The source code is completely oblivious of the game's story and contents. It is,
-therefore, really easy to tweak the one presented or write a completely new one.  
-To do so, one has to edit a single [JSON file].
+The source code is completely oblivious of the game's story.  
+It is really easy to tweak the example presented or write a completely different
+story.  
+To do so, edit the given [JSON file].
 
 The entirety of the game data can be represented with 3 simple abstractions:
 
 ### Scene
 
-The JSON object representing a *Scene* has the following elements:
+The JSON object representing a **Scene** has the following elements:
 
-+ title
-+ description
-+ tag  
-A non-negative, unique integer to identify the scene with.
-+ gameOver  
-Boolean value; if ```true``` the game ends when the player reaches the scene.
-+ actions  
-An array of [Action] objects.  
++ `title`
++ `description`
++ `tag`  
+A non-negative, <u>unique</u> integer to identify the scene with.
++ `gameOver`  
+Boolean value; if `true` the game ends when the player reaches the scene.
++ `actions`  
+An array of **Action** objects.  
 
 ### Action
 
-The JSON object representing an *Action* has the following elements:
+The JSON object representing an **Action** has the following elements:
 
-+ prompt  
++ `prompt`  
 A string that describes the action.
-+ result  
-A non-negative integer; it represents the **tag** of the *Scene* that will
++ `result`  
+A non-negative integer; it represents the `tag` of the **Scene** that will
 follow the performing of this action.
 
-Optionally, an *Action* may contain a *Password* object.
+Optionally, an **Action** may contain a **Password** object.
 
 ### Password
 
-The JSON object representing a *Password* has the following elements:
+The JSON object representing a **Password** has the following elements:
 
-+ value  
++ `value`  
 String that will be compared to the user input.
-+ fail  
-A non-negative integer; it represents the **tag** of the *Scene* that will
++ `fail`  
+A non-negative integer; it represents the `tag` of the **Scene** that will
 follow the performing of this action if the user input does not match the
-password's value.
+password's `value`.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+### Example:
 
-## Dependencies
+```json
+[
+  {
+    "title": "Scene 0",
+    // --- Description can be multiple lines of text, it must be an array.
+    // --- Each line is an entry in the array of strings.
+    "description": ["This is the beginning of the game."],
+    // --- The first scene must have tag = 0
+    "tag": 0,
+    "gameOver": false,
+    "actions": [
+      { "prompt": "Go to scene 1", "result": 1 },
+      { "prompt": "Go to scene 2", "result": 2 }
+    ]
+  },
 
-+ Python 3.6+
+  {
+    "title": "Scene 1",
+    "description": ["A new scene of the game."],
+    "tag": 1,
+    "gameOver": false,
+    "actions": [
+      { "prompt": "Go back", "result": 0 },
+      // --- Go to scene 2 if user answers "hello", scene 0 otherwise
+      { "prompt": "What does 'ciao' mean?", "result": 2,
+            "password": { "value": "hello", "fail": 0 }
+      }
+    ]
+  },
+
+  {
+    "title": "Scene 2",
+    "description": ["End of the Game."],
+    "tag": 2,
+    // --- The game ends in this scene. The array of actions is empty.
+    "gameOver": true,
+    "actions": []
+  }
+]
+```
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -123,17 +156,9 @@ https://www.ifwiki.org/Choice-based_interactive_fiction
 https://github.com/marcoplaitano/images/blob/main/interactive_fiction_demo.png
 "Demo image"
 
-[download]:
-https://github.com/marcoplaitano/interactive-fiction/archive/refs/heads/master.zip
-"Repository download"
-
 [JSON file]:
 data/story.json
 "Repository file"
-
-[Action]:
-#action
-"Anchor to header"
 
 [MIT]:
 LICENSE
