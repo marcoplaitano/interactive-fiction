@@ -93,14 +93,14 @@ password's `value`.
 
 ### Example:
 
-```json
+```yaml
 [
   {
     "title": "Scene 0",
-    // --- Description can be multiple lines of text, it must be an array.
-    // --- Each line is an entry in the array of strings.
+    # --- Description can be multiple lines of text, it must be an array.
+    # --- Each line is an entry in the array of strings.
     "description": ["This is the beginning of the game."],
-    // --- The first scene must have tag = 0
+    # --- The first scene must have tag = 0
     "tag": 0,
     "gameOver": false,
     "actions": [
@@ -116,7 +116,7 @@ password's `value`.
     "gameOver": false,
     "actions": [
       { "prompt": "Go back", "result": 0 },
-      // --- Go to scene 2 if user answers "hello", scene 0 otherwise
+      # --- Go to scene 2 if user answers "hello", scene 0 otherwise
       { "prompt": "What does 'ciao' mean?", "result": 2,
             "password": { "value": "hello", "fail": 0 }
       }
@@ -127,7 +127,7 @@ password's `value`.
     "title": "Scene 2",
     "description": ["End of the Game."],
     "tag": 2,
-    // --- The game ends in this scene. The array of actions is empty.
+    # --- The game ends in this scene. The array of actions is empty.
     "gameOver": true,
     "actions": []
   }
