@@ -97,8 +97,4 @@ def correct_password(password):
         `bool` `True` if user input and password match; `False` otherwise.
     """
     string = get_input("> ")
-    # The following check only applies to the template story presented in the repository.
-    if not string.isnumeric():
-        print("The keypad only accepts digits.")
-        return correct_password(password)
     return string == password
