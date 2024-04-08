@@ -16,7 +16,7 @@ Each action results in a different outcome, leading to a new situation.
 Clone this repository and run the main script:
 
 ```shell
-python3 main.py
+python3 src/main.py
 ```
 
 ### How to play

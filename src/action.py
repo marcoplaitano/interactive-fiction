@@ -8,7 +8,7 @@ INTERACTIVE FICTION
 A choice-based interactive fiction game implemented in Python.
 """
 
-from src.password import GamePassword
+from password import GamePassword
 
 
 class GameAction:

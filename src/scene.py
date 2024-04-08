@@ -8,8 +8,8 @@ INTERACTIVE FICTION
 A choice-based interactive fiction game implemented in Python.
 """
 
-from src.action import GameAction
-from src.utils import clear_screen
+from action import GameAction
+from utils import clear_screen
 
 
 class GameScene:

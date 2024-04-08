@@ -8,7 +8,7 @@ INTERACTIVE FICTION
 A choice-based interactive fiction game implemented in Python.
 """
 
-from src.utils import ask_choice, clear_screen, game_error
+from utils import ask_choice, clear_screen, game_error
 
 
 class GameMenu:
@@ -32,7 +32,7 @@ class GameMenu:
             `GameScene` new scene for the player to start from."""
         # Display the menu with its options.
         clear_screen()
-        print("MENU\nThis is the game's menu.\n")
+        print("MENU\n")
         for option in self._options:
             print(f"{option}. {self._options[option]}")
 

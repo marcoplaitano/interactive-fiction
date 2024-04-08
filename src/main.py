@@ -9,11 +9,11 @@ A choice-based interactive fiction game implemented in Python.
 """
 
 import json
-from src.action import GameAction
-from src.menu import GameMenu
-from src.password import GamePassword
-from src.scene import GameScene
-from src.utils import ask_choice, correct_password, game_error, next_scene
+from action import GameAction
+from menu import GameMenu
+from password import GamePassword
+from scene import GameScene
+from utils import ask_choice, correct_password, game_error, next_scene
 
 
 # File containing user's progress to save & load.
