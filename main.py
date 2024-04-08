@@ -60,7 +60,11 @@ def init_game_data(input_file):
         # Create scene.
         tag = obj["tag"]
         title = obj["title"]
-        description = "\n".join([line for line in obj["description"]])
+        # For the scene's description, accept both a string and an array of strings.
+        if type(obj["description"]) == str:
+            description = obj["description"]
+        else:
+            description = "\n".join([line for line in obj["description"]])
         game_over = obj["gameOver"]
         scene = GameScene(tag, title, description, game_over, actions)
         # Check that each tag is unique and map it to the corresponding scene.

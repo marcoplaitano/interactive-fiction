@@ -59,10 +59,15 @@ The entirety of the game data can be represented with 3 simple abstractions:
 
 The JSON object representing a **Scene** has the following elements:
 
-+ `title`
-+ `description`
++ `title`  
+A short string
++ `description`  
+A string, or an array of strings.  
+If a string, use `\n` to indicate new lines; if an array, each entry is a
+new line.
 + `tag`  
-A non-negative, <u>unique</u> integer to identify the scene with.
+A non-negative, unique integer to identify the scene with.  
+The tag of the initial scene of the game must be `0`.
 + `gameOver`  
 Boolean value; if `true` the game ends when the player reaches the scene.
 + `actions`  
@@ -97,9 +102,8 @@ password's `value`.
 [
   {
     "title": "Scene 0",
-    # --- Description can be multiple lines of text, it must be an array.
-    # --- Each line is an entry in the array of strings.
-    "description": ["This is the beginning of the game."],
+    # --- Example of description with single string.
+    "description": "Describe this scene.\nNew line with escape character.",
     # --- The first scene must have tag = 0
     "tag": 0,
     "gameOver": false,
@@ -111,13 +115,14 @@ password's `value`.
 
   {
     "title": "Scene 1",
-    "description": ["A new scene of the game."],
+    # --- Example of description with array of strings.
+    "description": ["A new scene of the game.", "New line in description."],
     "tag": 1,
     "gameOver": false,
     "actions": [
       { "prompt": "Go back", "result": 0 },
-      # --- Go to scene 2 if user answers "hello", scene 0 otherwise
-      { "prompt": "What does 'ciao' mean?", "result": 2,
+      # --- Go to scene 2 if user answers "hello", scene 0 otherwise.
+      { "prompt": "What is the meaning of ciao?", "result": 2,
             "password": { "value": "hello", "fail": 0 }
       }
     ]
